@@ -1,6 +1,6 @@
 NAME = phonebook
 CC = c++
-FLAG = -Wall -Werror -Wextra -std=c++98
+FLAG = -Wall -Werror -Wextra -std=c++98 -g3
 
 SRC = phonebook.cpp contact_utils.cpp
 OBJ = $(SRC:.cpp=.o)

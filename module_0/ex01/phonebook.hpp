@@ -28,12 +28,9 @@ class Phonebook
         Contact contact[8];
         int contact_len;
     public:
-        Phonebook(int contact_len)
-        {
-            contact_len = 0;
-        }
+        Phonebook() : contact_len(0) {};
         void add();
-        void show_contact(int i);
+        void show_contact();
 };
 
 #endif 

@@ -7,34 +7,38 @@ void Phonebook::add()
 
     if (contact_len == 7)
         contact_len = 0;
-    std::cout <<"Name: " << std::endl;
+    std::cout <<"Name: ";
     std::getline (std::cin, str);
     contact[contact_len].set_name(str);
-    std::cout <<"Last name: " << std::endl;
+    std::cout <<"Last name: ";
     std::getline (std::cin, str);
     contact[contact_len].set_last_name(str);
-    std::cout <<"nikname: " << std::endl;
+    std::cout <<"nikname: ";
     std::getline (std::cin, str);
     contact[contact_len].set_nikname(str);
-    std::cout <<"Phone number: " << std::endl;
+    std::cout <<"Phone number: ";
     std::getline (std::cin, str);
     contact[contact_len].set_phone_number(str);
-    std::cout <<"Bigghest secret: " << std::endl;
+    std::cout <<"Bigghest secret: ";
     std::getline (std::cin, str);
     contact[contact_len].set_secret(str);
     contact_len++;
 }
 
-void Phonebook::show_contact(int i)
+void Phonebook::show_contact()
 {
-    if (i > 8)
-        return ;
+    std::string str;
+    int i;
+
+    std::cout << "INDEX: ";
+    std::getline(std::cin, str);
+    i = std::atoi(str.c_str());
     std::cout << contact[i - 1].pick_name() << std::endl;
 }
 
 int main()
 {
-    Phonebook phone(0);
+    Phonebook phone;
     std::string command;
 
     while (true)
@@ -46,7 +50,9 @@ int main()
         else if (command == "ADD")
             phone.add();
         else if (command == "SEARCH")
-            phone.show_contact(atoi(&command[7]));
+        {
+            phone.show_contact();
+        }
     }
     std::cout <<"Biennnnn!!!!!"<< std::endl;
 }
