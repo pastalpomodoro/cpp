@@ -24,3 +24,11 @@ std::string Contact::pick_name()
 {
     return(name);
 }
+std::string Contact::pick_last_name()
+{
+    return(last_name);
+}
+std::string Contact::pick_nikname()
+{
+    return(nikname);
+}

@@ -1,5 +1,5 @@
 #include "phonebook.hpp"
-#include <iostream>
+
 
 void Phonebook::add()
 {
@@ -13,7 +13,7 @@ void Phonebook::add()
     std::cout <<"Last name: ";
     std::getline (std::cin, str);
     contact[contact_len].set_last_name(str);
-    std::cout <<"nikname: ";
+    std::cout <<"Nikname: ";
     std::getline (std::cin, str);
     contact[contact_len].set_nikname(str);
     std::cout <<"Phone number: ";
@@ -25,6 +25,30 @@ void Phonebook::add()
     contact_len++;
 }
 
+void print_contact(std::string str)
+{
+    int i;
+    int f;
+    int size;
+
+    size = str.length();
+    i = -1;
+    while (i++, i < (10 - size))
+        std::cout <<" ";
+    // std::cout <<"size"<<size;
+    f = 0;
+    while (str[f], i < 10)
+    {
+        if (i == 9 && str[f + 1] != '\0')
+        {
+            std::cout << ".";
+            break;
+        }
+        std::cout <<str[f];
+        i++;
+        f++;
+    }
+}
 void Phonebook::show_contact()
 {
     std::string str;
@@ -32,8 +56,19 @@ void Phonebook::show_contact()
 
     std::cout << "INDEX: ";
     std::getline(std::cin, str);
+    if (!std::isdigit(str[0]))
+        return ;
     i = std::atoi(str.c_str());
-    std::cout << contact[i - 1].pick_name() << std::endl;
+    if (i > contact_len || i <= 0)
+        return;
+    print_contact(str);
+    std::cout <<"|";
+    print_contact(contact[i - 1].pick_name());
+    std::cout <<"|";
+    print_contact(contact[i - 1].pick_last_name());
+    std::cout <<"|";
+    print_contact(contact[i - 1].pick_nikname());
+    std::cout <<"\n";
 }
 
 int main()
@@ -54,5 +89,5 @@ int main()
             phone.show_contact();
         }
     }
-    std::cout <<"Biennnnn!!!!!"<< std::endl;
+    return (1);
 }

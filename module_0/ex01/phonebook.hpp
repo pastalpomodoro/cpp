@@ -4,6 +4,7 @@
 #include<string>
 #include<cstdlib>
 #include<iostream>
+#include<stdio.h>
 
 class Contact
 {
@@ -20,6 +21,8 @@ class Contact
         void set_phone_number(const std::string str);
         void set_secret(const std::string str);
         std::string pick_name();
+        std::string pick_last_name();
+        std::string pick_nikname();
 };
 
 class Phonebook
