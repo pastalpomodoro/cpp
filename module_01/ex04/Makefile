@@ -1,8 +1,8 @@
-NAME = zombie
+NAME = ex04
 CC = c++
 FLAG = -Wall -Werror -Wextra -std=c++98 -g3
 
-SRC = 
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
