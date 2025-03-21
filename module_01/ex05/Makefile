@@ -1,8 +1,8 @@
-NAME = zombie
+NAME = Harl
 CC = c++
 FLAG = -Wall -Werror -Wextra -std=c++98 -g3
 
-SRC = 
+SRC = main.cpp Harl.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
