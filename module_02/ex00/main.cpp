@@ -2,5 +2,10 @@
 
 int main(void)
 {
-    std::cout << "salut" <<std::endl;
+    Fixed a;
+    Fixed b(a);
+    Fixed c;
+
+    c = b;
+    // std::cout << "salut" <<std::endl;
 }
