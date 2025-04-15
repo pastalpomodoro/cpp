@@ -99,3 +99,25 @@ bool    operator!=(Fixed const &a, Fixed const &b)
     a.toFloat() != b.toFloat();
     return (a.toFloat() != b.toFloat());
 }
+
+Fixed   Fixed::operator+(Fixed const &b)
+{
+    return Fixed (this->toFloat() + b.toFloat());
+}
+Fixed   Fixed::operator-(Fixed const &b)
+{
+    return Fixed (this->toFloat() - b.toFloat());
+}
+Fixed   Fixed::operator*(Fixed const &b)
+{
+    return Fixed (this->toFloat() * b.toFloat());
+}
+Fixed   Fixed::operator/(Fixed const &b)
+{
+    return Fixed (this->toFloat() / b.toFloat());
+}
+Fixed   Fixed::operator++(void)
+{
+    this->_n++;
+    return(*this);
+}
