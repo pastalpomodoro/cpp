@@ -12,6 +12,17 @@ Fixed::Fixed(const Fixed& copy)
     std::cout << "Copy constructor called" << std::endl;
     this->_n = copy.getRawBits();
 }
+
+Fixed::Fixed(const int n)
+{
+    std::cout << "Int constructor called" << std::endl;
+    this->_n = n << this->_f;
+}
+Fixed::Fixed(const float n)
+{
+    std::cout << "Float constructor called" << std::endl;
+    this->_n = roundf(n * (1 << this->_f));
+}
 Fixed::~Fixed(void)
 {
 	std::cout << "Destructor called" << std::endl;
@@ -34,4 +45,21 @@ int Fixed::getRawBits(void) const
 void Fixed::setRawBits(int const raw)
 {
     this->_n = raw;
+}
+
+float    Fixed::toFloat(void) const
+{
+    return ((float)this->_n / (1 << this->_f));
+}
+
+int        Fixed::toInt(void)const
+{
+    return (this->_n >> this->_f);
+}
+
+std::ostream  &operator<<(std::ostream &out, Fixed const &n)
+{
+    // std::cout << "Copy assignment operator called" << std::endl;
+    out << n.toFloat();
+    return (out);
 }

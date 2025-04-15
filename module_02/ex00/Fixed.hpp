@@ -13,6 +13,8 @@ class Fixed
         Fixed(const Fixed& copy);
         ~Fixed();
         Fixed &operator=(const Fixed &other);
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
 };
 
 #endif
