@@ -2,7 +2,7 @@
 
 const int Fixed::_f = 8;
 
-Fixed::Fixed(void)
+Fixed::Fixed(void): _n(0)
 {
     std::cout << "Default constructor called" << std::endl;
     return ;

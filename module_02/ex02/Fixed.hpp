@@ -27,9 +27,13 @@ class Fixed
         Fixed   operator*(Fixed const &b);
         Fixed   operator/(Fixed const &b);
         Fixed   operator++(void);
+        Fixed   operator++(int);
+        static Fixed   min(Fixed &a, Fixed &b);
+        static Fixed   max(Fixed &a, Fixed &b);
     };
     
     std::ostream &operator<<(std::ostream &out, Fixed const &n);
+    //ajouter toutes ces fonction au membre publique de la classe
     bool    operator==(Fixed const &a, Fixed const &b);
     bool    operator>(Fixed const &a, Fixed const &b);
     bool    operator<(Fixed const &a, Fixed const &b);
