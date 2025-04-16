@@ -13,7 +13,11 @@ ScavTrap::~ScavTrap(void)
     std::cout << "ScavTrap destructor called\n";
 }
 
-void ScavTrap::guardGate(void)
+void    ScavTrap::attack(const std::string &target)
+{
+    std::cout << "ScavTrap is attacking " << target << std::endl;
+}
+void    ScavTrap::guardGate(void)
 {
     std::cout << "Gate keep mode activate\n";
 }

@@ -1,10 +1,10 @@
 #include"ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void): _Hit(10), _Energy(10), _Attack(0)
+ClapTrap::ClapTrap(void): _Hit(100), _Energy(100), _Attack(30)
 {
     std::cout << "Default ClapTrap contructor called\n";
 }
-ClapTrap::ClapTrap(std::string name): _Hit(10), _Energy(10), _Attack(0)
+ClapTrap::ClapTrap(std::string name): _Hit(100), _Energy(100), _Attack(30)
 {
     std::cout << "Name ClapTrap contructor called\n";
     this->_name = name;

@@ -4,5 +4,6 @@
 int main(void)
 {
     FragTrap a("toto");
-    a.attack("Fils De Pute");    
+    a.attack("Fils De Pute");
+    a.highFivesGuys();
 }
