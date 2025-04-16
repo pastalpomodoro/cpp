@@ -30,6 +30,8 @@ class Fixed
         Fixed   operator++(int);
         static Fixed   min(Fixed &a, Fixed &b);
         static Fixed   max(Fixed &a, Fixed &b);
+        static Fixed   min(Fixed const &a, Fixed const &b);
+        static Fixed   max(Fixed const &a, Fixed const &b);
     };
     
     std::ostream &operator<<(std::ostream &out, Fixed const &n);
