@@ -1,36 +1,25 @@
 #include "main.hpp"
 
-int is_the_word(char **av, std::string str)
-{
-    int i;
-
-    i = -1;
-    while (i++, str[i] && str[i] != 9 && str[i] != 10 && str[i] != 11
-        && str[i] != 12 && str[i] != 13 && str[i] != ' ')
-    {
-        if (av[2][i] != str[i])
-            return (0);
-    }
-    if (av[2][i] != '\0')
-        return (0);
-    return (1);
-}
-
-void replace(char **av, std::string str)
+void replace(char **av, std::string str, std::string replace)
 {
     std::ofstream outfile;
     int f;
+    std::string tmp;
 
     outfile.open((std::string(av[1])+".replace").c_str());
-    f = -1;
-    while (f++, str[f])
+    std::cout << (std::string(av[1])+".replace").c_str() << std::endl;
+    for (int i = 0; str[i];)
     {
-        if (is_the_word(av, &str[f]))
+        tmp = &str[i];
+        if (tmp.find(av[2]) == 0)
         {
-            outfile << av[3];
-            f += std::string(av[2]).length();
+            f = -1;
+            while (f++, av[3][f])
+                outfile << av[3][f];
+            i += replace.length();
         }
-        outfile << str[f];
+        else
+            outfile << str[i++];
     }
     outfile.close();
 }
@@ -40,7 +29,7 @@ int main(int ac, char **av)
     char c;
     std::string str;
 
-    if (ac < 2)
+    if (ac != 4)
         return (0);
     file_r.open(av[1], std::ios::in);
     if (file_r.is_open())
@@ -51,5 +40,5 @@ int main(int ac, char **av)
         }
     }
     file_r.close();
-    replace(av, str);
+    replace(av, str, av[2]);
 }
