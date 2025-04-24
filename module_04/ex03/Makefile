@@ -1,9 +1,9 @@
-NAME=ex01	
+NAME=ex03
 
 CC=c++
 FLAG=-Wall -Werror -Wextra
 
-SRC=main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRC=main.cpp AMateria.cpp
 OBJ=$(SRC:.cpp=.o)
 
 all:$(NAME)

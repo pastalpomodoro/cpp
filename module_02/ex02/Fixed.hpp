@@ -22,6 +22,14 @@ class Fixed
         void setRawBits(int const raw);
         int        toInt(void)const;
         float    toFloat(void)const;
+
+        bool    operator==(Fixed const &b);
+        bool    operator>(Fixed const &b);
+        bool    operator<(Fixed const &b);
+        bool    operator>=(Fixed const &b);
+        bool    operator<=(Fixed const &b);
+        bool    operator!=(Fixed const &b);
+
         Fixed   operator+(Fixed const &b);
         Fixed   operator-(Fixed const &b);
         Fixed   operator*(Fixed const &b);
@@ -36,10 +44,4 @@ class Fixed
     
     std::ostream &operator<<(std::ostream &out, Fixed const &n);
     //ajouter toutes ces fonction au membre publique de la classe
-    bool    operator==(Fixed const &a, Fixed const &b);
-    bool    operator>(Fixed const &a, Fixed const &b);
-    bool    operator<(Fixed const &a, Fixed const &b);
-    bool    operator>=(Fixed const &a, Fixed const &b);
-    bool    operator<=(Fixed const &a, Fixed const &b);
-    bool    operator!=(Fixed const &a, Fixed const &b);
 #endif

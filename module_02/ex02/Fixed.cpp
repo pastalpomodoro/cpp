@@ -64,40 +64,34 @@ std::ostream &operator<<(std::ostream &out, Fixed const &n)
     return (out);
 }
 
-bool    operator==(Fixed const &a, Fixed const &b)
+bool    Fixed::operator==(Fixed const &b)
 {
-    a.toFloat() == b.toFloat();
-    return (a.toFloat() == b.toFloat());
+    return (this->toFloat() == b.toFloat());
 }
 
-bool    operator>(Fixed const &a, Fixed const &b)
+bool    Fixed::operator>(Fixed const &b)
 {
-    a.toFloat() > b.toFloat();
-    return (a.toFloat() > b.toFloat());
+    return (this->toFloat() > b.toFloat());
 }
 
-bool    operator<(Fixed const &a, Fixed const &b)
+bool    Fixed::operator<(Fixed const &b)
 {
-    a.toFloat() < b.toFloat();
-    return (a.toFloat() < b.toFloat());
+    return (this->toFloat() < b.toFloat());
 }
 
-bool    operator>=(Fixed const &a, Fixed const &b)
+bool    Fixed::operator>=(Fixed const &b)
 {
-    a.toFloat() >= b.toFloat();
-    return (a.toFloat() >= b.toFloat());
+    return (this->toFloat() >= b.toFloat());
 }
 
-bool    operator<=(Fixed const &a, Fixed const &b)
+bool    Fixed::operator<=(Fixed const &b)
 {
-    a.toFloat() <= b.toFloat();
-    return (a.toFloat() <= b.toFloat());
+    return (this->toFloat() <= b.toFloat());
 }
 
-bool    operator!=(Fixed const &a, Fixed const &b)
+bool    Fixed::operator!=(Fixed const &b)
 {
-    a.toFloat() != b.toFloat();
-    return (a.toFloat() != b.toFloat());
+    return (this->toFloat() != b.toFloat());
 }
 
 Fixed   Fixed::operator+(Fixed const &b)
